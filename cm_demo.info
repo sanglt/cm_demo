@@ -1,0 +1,6 @@
+name = Composer Manager Demo
+version = 7.x-1.x-dev
+description = "Provide the demo for composer_manager module"
+core = 7.x
+
+dependencies[] = composer_manager

@@ -1,0 +1,15 @@
+<?php
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+/**
+* Implements hook_entity_insert()
+*/
+function cm_demo_entity_insert($entity, $type) {
+  // Create the logger
+  $logger = new Logger('my_logger');
+  // Now add some handlers
+  $logger->pushHandler(new StreamHandler('public://cm_demo.log', Logger::DEBUG));
+
+  $logger->addInfo('New entity add', array('entity' => $entity));
+}
